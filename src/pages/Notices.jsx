@@ -1,4 +1,4 @@
-import { FileText, Download, ExternalLink } from 'lucide-react';
+import { FileText, Download, ExternalLink, Eye } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import './Notices.css';
 
@@ -27,10 +27,21 @@ const Notices = () => {
                                     <span className="notice-tag">{notice.type}</span>
                                 </div>
                             </div>
-                            <div className="notice-actions">
-                                <a href={notice.link} className="btn-icon" title="View/Download">
-                                    {notice.type === 'Link' ? <ExternalLink size={20} /> : <Download size={20} />}
-                                </a>
+                            <div className="notice-actions" style={{ display: 'flex', gap: '0.5rem' }}>
+                                {notice.type === 'Link' ? (
+                                    <a href={notice.link} target="_blank" rel="noopener noreferrer" className="btn-icon" title="Visit Link">
+                                        <ExternalLink size={20} />
+                                    </a>
+                                ) : (
+                                    <>
+                                        <a href={notice.link} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View">
+                                            <Eye size={20} />
+                                        </a>
+                                        <a href={notice.link} download={`${notice.title}.pdf`} className="btn-icon" title="Download">
+                                            <Download size={20} />
+                                        </a>
+                                    </>
+                                )}
                             </div>
                         </div>
                     ))}
