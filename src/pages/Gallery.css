@@ -277,8 +277,18 @@
 
 @media (max-width: 768px) {
     .lightbox-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        display: block;
+        column-count: 2;
+        column-gap: 0.5rem;
+        height: auto;
+    }
+
+    .lightbox-grid-item {
+        margin-bottom: 0.5rem;
+        break-inside: avoid;
+        aspect-ratio: auto;
+        /* Allow natural height */
+        height: auto;
     }
 
     .lightbox-scroll-container {
