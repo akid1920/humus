@@ -4,6 +4,23 @@ import './Notices.css';
 
 const Notices = () => {
     const { notices } = useData();
+    const handleView = (e, notice) => {
+        e.preventDefault();
+        if (notice.link && notice.link.startsWith('data:')) {
+            // Convert Base64 data URI to Blob to bypass browser security restrictions on top-frame navigation
+            fetch(notice.link)
+                .then(res => res.blob())
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    window.open(url, '_blank');
+                })
+                .catch(err => console.error("Error viewing file:", err));
+        } else {
+            // Normal URL
+            window.open(notice.link, '_blank');
+        }
+    };
+
     return (
         <div className="notices-page">
             <div className="page-header">
@@ -34,7 +51,7 @@ const Notices = () => {
                                     </a>
                                 ) : (
                                     <>
-                                        <a href={notice.link} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View">
+                                        <a href={notice.link} onClick={(e) => handleView(e, notice)} className="btn-icon" title="View">
                                             <Eye size={20} />
                                         </a>
                                         <a href={notice.link} download={`${notice.title}.pdf`} className="btn-icon" title="Download">
