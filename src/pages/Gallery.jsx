@@ -110,7 +110,7 @@ const Gallery = () => {
                         </button>
 
                         {selectedItem.type === 'Photo' ? (
-                            <div className="lightbox-scroll-container" style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <div className="lightbox-scroll-container">
                                 {/* Show Grid if it's an album (images array exists and > 0) */}
                                 {selectedItem.images && selectedItem.images.length > 0 ? (
                                     <>
