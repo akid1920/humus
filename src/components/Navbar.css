@@ -154,12 +154,15 @@
 
     .navbar-menu.active {
         transform: translateX(0);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
     }
 
     .navbar-toggle {
         display: block;
-        z-index: 1002;
-        /* Ensure clickable */
+        position: relative;
+        /* Ensure z-index works */
+        z-index: 1005;
+        /* Higher than menu */
     }
 
     .navbar-link {
