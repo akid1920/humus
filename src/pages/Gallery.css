@@ -284,26 +284,39 @@
     }
 
     .lightbox-grid-item {
-        margin-bottom: 0;
+        margin-bottom: 1.5rem;
+        /* Space between photos */
         width: 100%;
         height: auto;
-        display: flex;
-        justify-content: center;
-        background: black;
-        /* aesthetic background for potential letterboxing */
+        display: block;
+        /* Simpler block layout */
+        background: transparent;
     }
 
     .lightbox-grid-item img {
-        width: auto;
-        max-width: 100%;
+        width: 100%;
+        /* Force width to match container */
         height: auto;
-        max-height: 85vh;
-        /* Ensure fits on screen */
+        /* Maintain aspect ratio */
+        max-height: none;
+        /* Let height flow naturally if user wants scrolling */
         object-fit: contain;
+        border-radius: 4px;
+        display: block;
     }
+
+    /* Alternative: If they prefer seeing whole image on one screen:
+       max-height: 85vh; object-fit: contain; width: auto; max-width: 100%; 
+       But "column of photos" implies feed style. I'll stick to width-fit.
+    */
 
     .lightbox-scroll-container {
         padding: 1rem 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        /* Fix width calculation */
+        overflow-x: hidden;
+        /* Prevent horizontal scroll */
     }
 
     .lightbox-content {
