@@ -6,15 +6,15 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container footer-container">
-                <div className="footer-section">
+                {/* <div className="footer-section">
                     <h3 className="footer-title">HUMUS</h3>
                     <p className="footer-desc">
                         A Community of Soil, Water & Environment Department,<br />
                         Dr. Muhammad Shahidullah Hall, University of Dhaka.
                     </p>
-                </div>
+                </div> */}
 
-                <div className="footer-section">
+                <div className="footer-section quick-links">
                     <h4 className="footer-heading">Quick Links</h4>
                     <ul className="footer-links">
                         <li><Link to="/notices">Notices</Link></li>
@@ -26,11 +26,17 @@ const Footer = () => {
 
                 <div className="footer-section">
                     <h4 className="footer-heading">Contact Us</h4>
-                    <div className="contact-item">
+                    <div className='links'>
+                        <div className="contact-item">
                         <MapPin size={16} />
                         <span>Dr. Muhammad Shahidullah Hall, DU</span>
                     </div>
-                    <div className="contact-item">
+                    <div className="social-links fb-1">
+                        <a href="https://www.facebook.com/profile.php?id=61586758424938" target="_blank" rel="noreferrer"><Facebook /></a>
+                    </div>
+                    </div>
+                    <div className='links'>
+                        <div className="contact-item">
                         <Mail size={16} />
                         <span>info@humus-du.com</span>
                     </div>
@@ -38,7 +44,8 @@ const Footer = () => {
                         <Phone size={16} />
                         <span>+880 1234 567890</span>
                     </div>
-                    <div className="social-links">
+                    </div>
+                    <div className="social-links fb-2">
                         <a href="https://www.facebook.com/profile.php?id=61586758424938" target="_blank" rel="noreferrer"><Facebook /></a>
                     </div>
                 </div>

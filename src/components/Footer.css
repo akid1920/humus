@@ -72,33 +72,78 @@
     font-size: 0.875rem;
 }
 
-@media (max-width: 768px) {
+.fb-1{
+    display: none;
+}
+
+@media (max-width: 500px) {
+
     .footer {
-        padding: 1.5rem 0 0;
+        height: fit-content;
+        padding: 0 0 0;
+        margin: 0;
     }
 
     .footer-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding-bottom: 1.5rem;
     }
 
     .footer-title {
         font-size: 1.25rem;
-        margin-bottom: 0.5rem;
     }
 
     .footer-heading {
         font-size: 1rem;
-        margin-bottom: 0.75rem;
     }
 
     .footer-links li {
-        margin-bottom: 0.35rem;
+        margin: 0px;
+    }
+
+    .footer-bottom{
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .footer-links a,
     .contact-item {
         font-size: 0.85rem;
     }
+
+    .footer-links{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .links{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-links{
+        padding: 0;
+        margin: 0;
+        bottom: 10px;
+        position: relative;
+    }
+
+    .quick-links, .fb-2{
+        display: none;
+    }
+
+    .fb-1 {
+        display: inline;
+    }
+
 }

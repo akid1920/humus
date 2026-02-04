@@ -195,13 +195,7 @@
 
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1.5rem;
-    }
-
-    .lightbox-content iframe {
-        width: 100%;
-        height: 50vh;
     }
 }
 
@@ -285,42 +279,28 @@
 
     .lightbox-grid-item {
         margin-bottom: 2rem;
-        /* Space between photos */
         width: 100%;
         min-width: 0;
-        /* Critical for flex child shrinkage */
         height: auto;
         display: block;
-        /* Simpler block layout */
         background: transparent;
     }
 
     .lightbox-grid-item img {
         width: 100%;
-        /* Force width to match container */
         height: auto;
-        /* Maintain aspect ratio */
         max-height: none;
-        /* Let height flow naturally if user wants scrolling */
         object-fit: contain;
         border-radius: 8px;
         display: block;
-        /* Ensure image doesn't overflow container */
         max-width: 100%;
     }
-
-    /* Alternative: If they prefer seeing whole image on one screen:
-       max-height: 85vh; object-fit: contain; width: auto; max-width: 100%; 
-       But "column of photos" implies feed style. I'll stick to width-fit.
-    */
 
     .lightbox-scroll-container {
         padding: 1rem 0.5rem;
         width: 100%;
         box-sizing: border-box;
-        /* Fix width calculation */
         overflow-x: hidden;
-        /* Prevent horizontal scroll */
     }
 
     .lightbox-content {

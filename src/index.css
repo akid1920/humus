@@ -52,6 +52,8 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll and hide off-screen elements */
 }
 
 *,
