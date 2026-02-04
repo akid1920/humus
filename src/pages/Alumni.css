@@ -1,0 +1,79 @@
+.alumni-page {
+    padding-bottom: 4rem;
+}
+
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.alumni-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alumni-card:hover {
+    transform: translateY(-5px);
+}
+
+.alumni-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.alumni-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.alumni-batch {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.alumni-job {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.alumni-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.alumni-link {
+    color: #0077b5;
+    /* LinkedIn Blue */
+    transition: opacity 0.2s;
+}
+
+.alumni-link:hover {
+    opacity: 0.8;
+}
+
+.email-link {
+    color: #ea4335;
+    /* Gmail Red */
+}

@@ -1,0 +1,208 @@
+:root {
+  /* Modern Eco-Academic Palette */
+  /* Primary: Deep Forest Green (matching logo vibes) */
+  --primary-hue: 155;
+  --primary-sat: 40%;
+  --primary-light: 25%;
+  /* #265935 approx */
+  --color-primary: hsl(155, 45%, 25%);
+  --color-primary-light: hsl(155, 40%, 35%);
+  --color-primary-dark: hsl(155, 50%, 15%);
+
+  /* Accent: Earthy Gold / Vibrant Leaf */
+  --color-accent: hsl(45, 90%, 55%);
+  /* Gold */
+  --color-accent-secondary: hsl(85, 60%, 45%);
+  /* Fresh Green */
+
+  /* Neutral / Surface */
+  --bg-color: hsl(210, 20%, 98%);
+  /* Cool off-white */
+  --surface-color: #ffffff;
+  --surface-color-transparent: rgba(255, 255, 255, 0.85);
+
+  /* Text */
+  --text-primary: hsl(215, 25%, 20%);
+  --text-secondary: hsl(215, 15%, 45%);
+  --text-light: hsl(215, 10%, 65%);
+
+  /* Spacing & Layout */
+  --container-width: 1280px;
+  --header-height: 80px;
+
+  /* Borders & Shadows */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+  --border-light: 1px solid rgba(0, 0, 0, 0.08);
+
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(var(--primary-hue), 50%, 50%, 0.15);
+
+  /* Typography */
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  /* Using Outfit for a modern feel if available, else Inter */
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(26, 77, 46, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(218, 165, 32, 0.03) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.01em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Modern Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  /* Pill shape */
+  font-weight: 600;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(26, 77, 46, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 77, 46, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}

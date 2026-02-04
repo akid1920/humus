@@ -1,0 +1,172 @@
+.org-header {
+    background: linear-gradient(135deg, hsl(210, 20%, 98%) 0%, hsl(210, 30%, 94%) 100%);
+    padding: 6rem 0 4rem;
+    /* Adjusted padding */
+    text-align: center;
+}
+
+.org-header h1 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.org-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.org-structure-section {
+    background-color: #eef5fc;
+    /* Light blueish tint like the reference image */
+    padding-bottom: 6rem;
+}
+
+.org-tier {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens, though we target specific tiers */
+}
+
+.org-card-wrapper {
+    width: 250px;
+    /* Fixed width for consistent bubbles */
+}
+
+/* Tier Specifics */
+.tier-1 .org-card-wrapper {
+    transform: scale(1.1);
+    /* President slightly larger */
+}
+
+.tier-4 {
+    align-items: center;
+    gap: 4rem;
+}
+
+.org-logo-center {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Logo image background would go here */
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    font-weight: bold;
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.tier-5 {
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tier-label {
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.tier-label::before,
+.tier-label::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #ccc;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+/* Connector Lines (Visual Only - Simple implementation) */
+/* Ideally, SVGs are better for complex trees. Using simplistic margins for now. */
+.connector-line {
+    height: 2rem;
+}
+
+/* Advisors Grid Reuse */
+.advisors-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Override TeamMember Card for Circular Look if desired, 
+   or keep the standard card but make it compact. 
+   The reference image has circular images with text below.
+   Let's adjust strictly for this page if we want that look.
+*/
+
+/* Customizing cards inside the org structure section to look more like the reference */
+.org-structure-section .team-member {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.org-structure-section .member-image-container {
+    border-radius: 50%;
+    /* border removed */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    /* Force circular size */
+    height: 180px;
+    margin: 0 auto 1rem;
+}
+
+.org-structure-section .member-info {
+    padding: 0;
+    background: transparent;
+}
+
+.org-structure-section .member-name {
+    font-weight: 700;
+    color: #333;
+}
+
+.org-structure-section .member-role {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .org-tier {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .tier-2,
+    .tier-3,
+    .tier-4,
+    .tier-5 {
+        flex-direction: row;
+        /* Keep grid/row behavior on tablet if possible */
+    }
+}
+
+@media (max-width: 600px) {
+    .org-tier {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tier-4 {
+        flex-direction: column;
+    }
+
+    .org-logo-center {
+        display: none;
+        /* Hide center logo on mobile to save space */
+    }
+}

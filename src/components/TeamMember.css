@@ -1,0 +1,156 @@
+.team-member {
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.member-image-container {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image {
+    transform: scale(1.05);
+}
+
+.member-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.member-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-name {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.member-role {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.member-session {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.member-socials {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-link {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+}
+
+.social-link:hover {
+    color: var(--color-primary);
+    background-color: rgba(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.1);
+}
+
+/* ============================
+   VARIANT: CARD (Advisors)
+   ============================ */
+.team-member.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member.card .member-image-container {
+    background-color: #1a56db;
+    /* Specific Blue from reference */
+    aspect-ratio: 1.2;
+    /* Slightly more rectangular */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* If no image, ensure the big letter shows */
+.team-member.card .member-placeholder {
+    background: #1a56db;
+    /* Solid Blue header */
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.team-member.card .member-info {
+    padding: 2rem 1.5rem;
+    background: white;
+    text-align: center;
+}
+
+.team-member.card .member-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.team-member.card .member-role {
+    color: #1a56db;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.team-member.card .member-session {
+    color: #666;
+    font-size: 0.8rem;
+}
