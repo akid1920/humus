@@ -21,6 +21,9 @@
 .admin-brand {
     padding: 1.5rem 2rem;
     border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .admin-brand h2 {
@@ -28,6 +31,22 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
+}
+
+/* Mobile close button in sidebar */
+.mobile-close-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
+}
+
+.mobile-close-btn:hover {
+    background-color: rgba(30, 60, 40, 0.1);
 }
 
 .admin-nav {
@@ -146,6 +165,10 @@
         justify-content: center;
     }
 
+    .mobile-close-btn {
+        display: block;
+    }
+
     .mobile-overlay {
         display: block;
     }
@@ -171,11 +194,20 @@
         overflow: hidden;
     }
 
+    /* Hide hamburger when menu is open (close button is in sidebar) */
+    .admin-layout.menu-open .mobile-menu-toggle {
+        display: none;
+    }
+
     .admin-content {
         margin-left: 0;
         padding: 1rem;
         padding-top: 4rem;
         /* Space for mobile toggle button */
+    }
+
+    .admin-brand {
+        padding: 1.25rem 1.5rem;
     }
 
     .admin-brand h2 {

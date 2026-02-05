@@ -19,10 +19,12 @@ const AdminLayout = () => {
 
     return (
         <div className={`admin-layout ${mobileMenuOpen ? 'menu-open' : ''}`}>
-            {/* Mobile Menu Toggle */}
-            <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Mobile Menu Toggle - Only hamburger when closed */}
+            {!mobileMenuOpen && (
+                <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+                    <Menu size={24} />
+                </button>
+            )}
 
             {/* Mobile Overlay */}
             <div
@@ -33,6 +35,10 @@ const AdminLayout = () => {
             <aside className={`admin-sidebar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
                 <div className="admin-brand">
                     <h2>HUMUS Admin</h2>
+                    {/* Close button inside brand area on mobile */}
+                    <button className="mobile-close-btn" onClick={closeMobileMenu}>
+                        <X size={24} />
+                    </button>
                 </div>
 
                 <nav className="admin-nav">
