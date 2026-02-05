@@ -18,7 +18,7 @@ const AdminLayout = () => {
     };
 
     return (
-        <div className="admin-layout">
+        <div className={`admin-layout ${mobileMenuOpen ? 'menu-open' : ''}`}>
             {/* Mobile Menu Toggle */}
             <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
