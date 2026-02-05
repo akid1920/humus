@@ -1,5 +1,6 @@
 import { FileText, Calendar, Image } from 'lucide-react';
 import { useData } from '../../context/DataContext';
+import './Dashboard.css';
 
 const Dashboard = () => {
     const { notices, events, gallery } = useData();

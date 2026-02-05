@@ -1,0 +1,39 @@
+/* Dashboard specific styles */
+.admin-dashboard {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.admin-dashboard .mb-8 {
+    margin-bottom: 2rem;
+}
+
+.admin-dashboard .text-2xl {
+    font-size: 1.5rem;
+}
+
+.admin-dashboard .font-bold {
+    font-weight: 700;
+}
+
+.admin-dashboard .text-gray-800 {
+    color: #1e293b;
+}
+
+.admin-dashboard .text-gray-500 {
+    color: #64748b;
+}
+
+/* Mobile Dashboard Styles */
+@media (max-width: 768px) {
+    .admin-dashboard header h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .admin-dashboard header p {
+        font-size: 0.9rem;
+    }
+
+    .admin-dashboard .mb-8 {
+        margin-bottom: 1.5rem;
+    }
+}
